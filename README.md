@@ -1,6 +1,6 @@
 # react-ts-practice
 
-개인 typescript 연습장입니다.
+개인 Typescript 연습장입니다.
 
 ## Skills
 
