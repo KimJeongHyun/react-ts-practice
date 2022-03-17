@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 import { BsFillSunFill, BsMoonStars } from 'react-icons/bs';
 
-import { modeStore } from '../globalStore/globalStore';
+import { modeStore } from '../../globalStore/globalStore';
 
 interface ColorModeComp {
   mode: boolean | string;

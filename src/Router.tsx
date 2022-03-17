@@ -7,7 +7,7 @@ import Calculator from './pages/Calculator/Calculator';
 import Cards from './pages/Cards/Cards';
 
 import Landing from './pages/Landing/Landing';
-import { modeStore } from './components/globalStore/globalStore';
+import { modeStore } from './globalStore/globalStore';
 
 function Router() {
   const { selectedMode } = modeStore();
