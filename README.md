@@ -21,7 +21,7 @@
 
 
 * Light/Dark mode
-  - Styled-components의 Theme을 이용한 모드 전환.
+  - Styled-components의 Theme을 이용한  모드 전환.
   - Session-storage를 이용한 세션의 컬러 모드 상태 보존.
 
 
