@@ -17,12 +17,12 @@
 
 * Zustand
   - 전역 상태 관리 라이브러리.
-  - 전환된 모드와 관련된 상태 저장.
+  - 전환된 컬러 모드의 상태 저장.
 
 
 * Light/Dark mode
   - Styled-components의 Theme을 이용한 모드 전환.
-  - Session-storage를 이용한 세션의 모드 상태 보존.
+  - Session-storage를 이용한 세션의 컬러 모드 상태 보존.
 
 
 * Cards
