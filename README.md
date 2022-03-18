@@ -30,3 +30,4 @@
   - input:string을 이용한 comment 추가 가능.
   
 * Calculator
+  - 윈도우 
