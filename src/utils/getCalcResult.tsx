@@ -67,22 +67,6 @@ export default function getCalcResult(
   };
 
   switch (operand) {
-    case 'pow':
-      tempObj.total !== 0 && tempObj.operator === ''
-        ? (tempObj.total **= 2)
-        : (tempObj.total = nowOperator ** 2);
-
-      tempObj.operator = '';
-      tempObj.prevOperator = String(tempObj.total);
-      break;
-    case 'sqrt':
-      tempObj.total !== 0 && tempObj.operator === ''
-        ? (tempObj.total = Math.sqrt(tempObj.total))
-        : (tempObj.total = Math.sqrt(nowOperator));
-
-      tempObj.operator = '';
-      tempObj.prevOperator = String(tempObj.total);
-      break;
     case '+':
       initOp(operand);
       plus();
@@ -102,6 +86,22 @@ export default function getCalcResult(
     case '%':
       initOp(operand);
       restCalc();
+      break;
+    case 'pow':
+      tempObj.total !== 0 && tempObj.operator === ''
+        ? (tempObj.total **= 2)
+        : (tempObj.total = nowOperator ** 2);
+
+      tempObj.operator = '';
+      tempObj.prevOperator = String(tempObj.total);
+      break;
+    case 'sqrt':
+      tempObj.total !== 0 && tempObj.operator === ''
+        ? (tempObj.total = Math.sqrt(tempObj.total))
+        : (tempObj.total = Math.sqrt(nowOperator));
+
+      tempObj.operator = '';
+      tempObj.prevOperator = String(tempObj.total);
       break;
     case '1/X':
       tempObj.total !== 0 && tempObj.operator === ''
@@ -123,6 +123,24 @@ export default function getCalcResult(
       tempObj.operator += operand;
       break;
     case '=':
+      switch (tempObj.operand) {
+        case '+':
+          plus();
+          break;
+        case '-':
+          minus();
+          break;
+        case '*':
+          multiple();
+          break;
+        case '÷':
+          divine();
+          break;
+        case '%':
+          restCalc();
+          break;
+        default:
+      }
       break;
     case 'C':
       tempObj.operator = '';

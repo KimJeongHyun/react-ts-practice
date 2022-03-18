@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import getCalcResult from '../../../utils/getCalcResult';
 
 export default function useSetCalcInput() {
@@ -17,10 +17,6 @@ export default function useSetCalcInput() {
       return newObj;
     });
   };
-
-  useEffect(() => {
-    console.log(calcInputs);
-  }, [calcInputs]);
 
   return { calcInputs, checkTypes };
 }
