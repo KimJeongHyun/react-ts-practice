@@ -6,16 +6,7 @@ import { BsFillSunFill, BsMoonStars } from 'react-icons/bs';
 
 import { modeStore } from '../../globalStore/globalStore';
 
-interface ColorModeComp {
-  mode: boolean | string;
-}
-
-interface IUrls {
-  name: string;
-  url: string;
-}
-
-const URLS: IUrls[] = [
+const URLS = [
   {
     name: 'HOME',
     url: '/',
@@ -33,7 +24,7 @@ const URLS: IUrls[] = [
 export default function Nav() {
   const { selectedMode, setSelectedMode } = modeStore();
 
-  const handleMode = () => {
+  const handleMode = (): void => {
     setSelectedMode(!selectedMode);
     sessionStorage.setItem('ColorMode', String(!selectedMode));
   };
@@ -42,7 +33,7 @@ export default function Nav() {
     <NavWrapper>
       <NavLogo>로고</NavLogo>
       <NavLinkBtns>
-        <ChangeColorMode mode={selectedMode} onClick={handleMode}>
+        <ChangeColorMode onClick={handleMode}>
           {selectedMode ? <ColorIconLight /> : <ColorIconMoon />}
         </ChangeColorMode>
         {URLS.map(item => (
@@ -81,7 +72,7 @@ const NavLinkBtns = styled.div`
   gap: 5px;
 `;
 
-const ChangeColorMode = styled.div<ColorModeComp>`
+const ChangeColorMode = styled.div`
   cursor: pointer;
   margin-right: 20px;
   transition: all ease 1s;
