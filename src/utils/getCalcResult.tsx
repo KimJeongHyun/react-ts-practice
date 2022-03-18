@@ -120,7 +120,7 @@ export default function getCalcResult(
       tempObj.prevOperator = String(tempObj.total);
       break;
     case '.':
-      tempObj.operator += operand;
+      !tempObj.operator.includes('.') && (tempObj.operator += operand);
       break;
     case '=':
       switch (tempObj.operand) {
