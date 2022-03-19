@@ -150,6 +150,9 @@ export default function getCalcResult(
     case 'CE':
       tempObj.operator = '';
       break;
+    case 'X':
+      tempObj.operator = tempObj.operator.slice(0, -1);
+      break;
     default:
       tempObj.total === nowOperator && (tempObj.operator = '');
       tempObj.operator += operand;
