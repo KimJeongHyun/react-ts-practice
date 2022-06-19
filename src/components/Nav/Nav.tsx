@@ -30,33 +30,40 @@ export default function Nav() {
   };
 
   return (
-    <NavWrapper>
-      <NavLogo>로고</NavLogo>
-      <NavLinkBtns>
-        <ChangeColorMode onClick={handleMode}>
-          {selectedMode ? <ColorIconLight /> : <ColorIconMoon />}
-        </ChangeColorMode>
-        {URLS.map(item => (
-          <LinkBtn key={item.name} to={item.url}>
-            {item.name}
-          </LinkBtn>
-        ))}
-      </NavLinkBtns>
-    </NavWrapper>
+    <>
+      <NavAbs>
+        <img src="https://picsum.photos/200/50" alt="dum" />
+      </NavAbs>
+      <NavSticky>
+        <NavLogo>로고</NavLogo>
+        <NavLinkBtns>
+          <ChangeColorMode onClick={handleMode}>
+            {selectedMode ? <ColorIconLight /> : <ColorIconMoon />}
+          </ChangeColorMode>
+          {URLS.map(item => (
+            <LinkBtn key={item.name} to={item.url}>
+              {item.name}
+            </LinkBtn>
+          ))}
+        </NavLinkBtns>
+      </NavSticky>
+    </>
   );
 }
 
-const NavWrapper = styled.nav`
-  width: 100%;
-  height: 5vh;
-  position: fixed;
+const NavAbs = styled.div`
+  position: relative;
+  background-color: #fff;
+  text-align: center;
+`;
+
+const NavSticky = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  padding: 0 1vw;
-  border-radius: 0 0 0 10px;
-  box-shadow: 0px 2px 2px ${props => props.theme.navShadow};
+  background-color: #fff;
 `;
 
 const NavLogo = styled.div`

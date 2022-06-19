@@ -5,29 +5,26 @@ import { BiEraser } from 'react-icons/bi';
 
 import { GRID_DATAS } from './GRID_DATAS';
 
-import { PageFrame } from '../../components/PageFrame/PageFrame';
 import useSetCalcInput from './hook/useSetCalcInput';
 
 export default function Calculator() {
   const { calcInputs, checkTypes } = useSetCalcInput();
 
   return (
-    <PageFrame>
-      <CalculatorWrapper>
-        <ResultBox>
-          {calcInputs.operator !== '' ? calcInputs.operator : calcInputs.total}
-        </ResultBox>
-        <NumberGrid>
-          {GRID_DATAS.map(item => {
-            return (
-              <EachGridItem key={item} onClick={() => checkTypes(item)}>
-                {item === 'X' ? <BiEraser /> : item}
-              </EachGridItem>
-            );
-          })}
-        </NumberGrid>
-      </CalculatorWrapper>
-    </PageFrame>
+    <CalculatorWrapper>
+      <ResultBox>
+        {calcInputs.operator !== '' ? calcInputs.operator : calcInputs.total}
+      </ResultBox>
+      <NumberGrid>
+        {GRID_DATAS.map(item => {
+          return (
+            <EachGridItem key={item} onClick={() => checkTypes(item)}>
+              {item === 'X' ? <BiEraser /> : item}
+            </EachGridItem>
+          );
+        })}
+      </NumberGrid>
+    </CalculatorWrapper>
   );
 }
 
