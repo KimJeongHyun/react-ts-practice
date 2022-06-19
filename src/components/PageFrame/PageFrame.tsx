@@ -5,8 +5,5 @@ export const PageFrame = styled.div`
   height: 100vh;
 
   background-color: ${props => props.theme.backColor};
-  transition: 0.125s all ease-in;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
+  transition: 0.3s all ease-in-out;
 `;

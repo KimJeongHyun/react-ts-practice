@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 export default function useInputComment(comments: string) {
   const [newInput, setNewInput] = useState('');
@@ -9,14 +9,14 @@ export default function useInputComment(comments: string) {
     setNewInput(value);
   };
 
-  const handleComments = () => {
+  const handleComments = useCallback(() => {
     setCardComments(current => {
       const newArray = [...current];
       newArray.push(newInput);
       return newArray;
     });
     setNewInput('');
-  };
+  }, [newInput]);
 
   const keyboardEnterInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.key === 'Enter' && handleComments();
